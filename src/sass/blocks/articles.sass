@@ -1,0 +1,19 @@
+@use 'vars' as v
+
+.articles
+  padding: 30px 0
+  display: flex
+  justify-content: space-between
+  flex-wrap: wrap
+
+.article
+  display: flex
+  flex-direction: column
+  flex-basis: 22%
+  padding: 15px
+  border: 1px solid v.$blue
+  &__poster
+    max-width: 100%
+  &__heading
+    padding-top: 30px
+    padding-bottom: 15px

@@ -1,0 +1,33 @@
+---
+layout: default
+title: Demo page
+heading: Start page demo
+text: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+---
+
+<div class="wrapper">
+  <h2>{{text}}</h2>
+
+  <div class="articles">
+    {{#each posts}}
+    <article class="article">
+      <img
+        class="article__poster"
+        src="./img/zaiats-pole-trava-vzgliad.jpg"
+        alt="jpg"
+      />
+      <h3 class="article__heading">{{ this.title }}</h3>
+      <p>{{ this.text }}</p>
+    </article>
+    {{/each}}
+  </div>
+
+  <div class="box">
+    <div class="counter">
+      <div id="counter__label" class="counter__label"></div>
+      <button id="counter__btn" class="counter__btn btn">Add...</button>
+    </div>
+  </div>
+
+  <svg><use xlink:href="/img/symbol/svg/sprite.symbol.svg#mountain"></use></svg>
+</div>

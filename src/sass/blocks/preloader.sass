@@ -1,0 +1,19 @@
+@use 'vars' as v
+
+.preloader
+  position: fixed
+  left: 0
+  top: 0
+  width: 100vw
+  height: 100vh
+  display: flex
+  justify-content: center
+  align-items: center
+  background: v.$bgMain
+  transition: opacity .5s, visibility .5s
+  &_hidden
+    opacity: 0
+    visibility: hidden
+  &__icon
+    width: 100px
+    height: 100px
