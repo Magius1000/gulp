@@ -182,14 +182,14 @@ text: Lorem ipsum, dolor sit amet consectetur adipisicing elit.
 
 **В связи с тем, что скрипт автоматически заменяет фоновые картинки на WebP, это может перебить ваши стили для фона.** А именно, это происходит, если описать фон разделенными стилями:
 
-```js
-  background: url(../img/truex.png) center no-repeat;
-  background-position: contain; /* background-position Будет перебит скриптом*/
+```css
+background: url(../img/truex.png) center no-repeat;
+background-position: contain; /* background-position Будет перебит скриптом*/
 ```
 
 Чтобы этого избежать используйте описание background в одну строку:
 
-```js
+```css
 background: url(../img/truex.png) center / contain no-repeat;
 ```
 
