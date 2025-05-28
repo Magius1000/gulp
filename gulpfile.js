@@ -133,7 +133,7 @@ const TEMP_DIR = 'temp';
     });
   }
 
-  gulp.task('clear', clearAll);
+  gulp.task('clear', clearAll, clearTemp);
 
   gulp.task(
     'sprite',
@@ -347,7 +347,7 @@ function svg() {
 
 function fonts() {
   return gulp // Шрифты просто копируем
-    .src(config.src.fonts)
+    .src(config.src.fonts, { encoding: false })
     .pipe(gulp.dest(distFolder.fonts))
     .pipe(gulpif(dev, browserSync.stream()));
 }
