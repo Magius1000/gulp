@@ -133,7 +133,7 @@ const TEMP_DIR = 'temp';
     });
   }
 
-  gulp.task('clear', clearAll, clearTemp);
+  gulp.task('clear', gulp.series(clearAll, clearTemp));
 
   gulp.task(
     'sprite',
@@ -310,7 +310,7 @@ function images() {
         })),
       }),
     )
-    .pipe(newer(config.dev.img)) // Исключает повторную обработку уже обработанных файлов
+    .pipe(newer(distFolder.img)) // Исключает повторную обработку уже обработанных файлов
     .pipe(gulpif(!dev, imagemin())) // Если мы не в режиме разработки - то сжимаем изображения
     .pipe(gulp.dest(distFolder.img)) // Вначале выводим изображений в изначальном формате
     .pipe(webp()) // Преобразование в формат webp
